@@ -17,13 +17,25 @@ const pretendard = localFont({
   display: "swap",
 });
 
+const pretendardMedium = localFont({
+  src: "../../public/fonts/PretendardRegular.otf",
+  variable: "--pretendardMedium",
+  display: "swap",
+});
+
+const pretendardLight = localFont({
+  src: "../../public/fonts/PretendardLight.woff2",
+  variable: "--pretendardLight",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
-    default: "Fonts & Footers",
-    template: "%s - Fonts & Footers",
+    default: "Claro",
+    template: "%s - Claro",
   },
   description:
-    "Fonts & Footers empowers business owners with e-commerce stores, business websites, and direct booking platforms. Elevate your online presence with our web development and design expertise!",
+    "Our purpose is to redefine the way you experience sound. We are driven by a singular purpose: to elevate your world through the magic of exceptional audio.",
   twitter: {
     card: "summary_large_image",
   },
@@ -36,7 +48,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={`${pretendard.variable} ${lb.variable}`}>
+      <body
+        className={`${pretendard.variable} ${lb.variable} ${pretendardMedium.variable} ${pretendardLight.variable}`}
+      >
         {children}
       </body>
     </html>

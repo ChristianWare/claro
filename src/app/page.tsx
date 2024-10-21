@@ -1,7 +1,9 @@
+import Hero from "@/components/Hero/Hero";
+
 export default function Home() {
   return (
     <main>
-      <h1>Hi-fidelity for your <br /> high standards</h1>
+      <Hero />
     </main>
   );
 }

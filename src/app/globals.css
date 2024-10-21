@@ -29,7 +29,7 @@
   box-sizing: border-box;
   text-decoration: none;
   line-height: 120%;
-  font-family: var(--suisseReg);
+  font-family: var(--pretendardMedium);
   scroll-behavior: smooth;
   /* scroll-margin-top: 200px; */
   overscroll-behavior: none;
@@ -63,21 +63,21 @@ h4,
 h5,
 h6,
 span {
-  font-family: var(--pretendard);
+  font-family: var(--pretendardMedium);
   color: var(--black);
 }
 
-.span {
+/* .span {
   line-height: 100%;
   letter-spacing: -0.04em;
   font-family: var(--PerfectlyNinetiesItalic);
-}
+} */
 
 h1 {
   font-size: 8rem;
   line-height: 100%;
   font-weight: 400;
-  letter-spacing: -.05em;
+  letter-spacing: -0.04em;
 }
 
 h2 {
@@ -215,7 +215,7 @@ textarea:focus {
 
   h1,
   .span1 {
-    font-size: 4rem;
+    font-size: 5rem;
     letter-spacing: -0.02em;
   }
 
