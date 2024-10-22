@@ -82,10 +82,10 @@ h1 {
 
 h2 {
   font-size: 4rem;
-  line-height: 120%;
-  font-weight: 500;
-  line-height: 1;
+  line-height: 115%;
+  font-weight: 400;
   letter-spacing: -0.04em;
+  font-family: var(--pretendard);
 }
 
 h3 {
