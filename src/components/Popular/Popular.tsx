@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import LayoutWrapper from "../LayoutWrapper";
 import styles from "./Popular.module.css";
+import ProductList from "../ProductList/ProductList";
 
 const Popular = () => {
   return (
@@ -12,10 +13,12 @@ const Popular = () => {
             <p className={styles.explore}>Explore the shop</p>
           </div>
           <div className={styles.bottom}>
-                  <Suspense fallback='Loading...'>
-                    
-                  </Suspense>
-
+            <Suspense fallback='Loading...'>
+              <ProductList
+                categoryId={process.env.POPULAR_CATEGORY_ID!}
+                limit={4}
+              />
+            </Suspense>
           </div>
         </div>
       </LayoutWrapper>
