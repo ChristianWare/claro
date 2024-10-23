@@ -70,7 +70,7 @@
   margin: 5px auto;
   border-radius: 15px;
   background-color: var(--white);
-  transition: all 0.3s ease-in-out;
+  transition: 0.4s all ease-in;
 }
 
 @media screen and (max-width: 900px) {
