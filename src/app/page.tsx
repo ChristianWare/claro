@@ -1,3 +1,4 @@
+import FinalCTA from "@/components/FinalCTA/FinalCTA";
 import Hero from "@/components/Hero/Hero";
 import Popular from "@/components/Popular/Popular";
 import TakeControl from "@/components/TakeControl/TakeControl";
@@ -14,6 +15,7 @@ const HomePage = async () => {
       <Uspii />
       <VideoUsp />
       <TakeControl />
+      <FinalCTA />
     </main>
   );
 };
