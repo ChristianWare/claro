@@ -56,14 +56,16 @@ const Popular = () => {
         </div>
       </LayoutWrapper>
       <div className={styles.parent}>
-        <div className={styles.bottomii}>
-          {data.map((x: DataItem) => (
-            <div key={x.id} className={styles.box}>
-              {x.icon}
-              <p className={styles.text}>{x.text}</p>
-            </div>
-          ))}
-        </div>
+        <LayoutWrapper>
+          <div className={styles.bottomii}>
+            {data.map((x: DataItem) => (
+              <div key={x.id} className={styles.box}>
+                {x.icon}
+                <p className={styles.text}>{x.text}</p>
+              </div>
+            ))}
+          </div>
+        </LayoutWrapper>
       </div>
     </section>
   );

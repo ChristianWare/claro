@@ -16,14 +16,13 @@
 }
 
 .bottomii {
-  max-width: 1500px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
-  padding: 5rem 10rem;
+  margin: -5rem 0rem;
 }
 
 .box {
@@ -44,11 +43,24 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 3rem;
   }
+
+  .box {
+    margin-bottom: 5rem;
+  }
 }
 
 @media screen and (max-width: 568px) {
   .bottomii {
     grid-template-columns: repeat(1, 1fr);
-    grid-gap: 7rem;
+    grid-gap: 2rem;
+    margin: 0rem;
+  }
+
+  .box {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 10rem;
+    margin-bottom: 0rem;
+    width: 100%;
   }
 }

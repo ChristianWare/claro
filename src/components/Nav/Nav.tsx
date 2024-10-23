@@ -3,15 +3,14 @@
 import styles from "./Nav.module.css";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import NavIcons from "../NavIcons/NavIcons";
 // import Logo from "../../../public/icons/logo.png";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isOverlayVisible, setIsOverlayVisible] = useState(false);
 
   const openMenu = () => {
     setIsOpen(!isOpen);
-    setIsOverlayVisible(!isOverlayVisible);
   };
 
   useEffect(() => {
@@ -82,18 +81,10 @@ function Nav() {
                 </Link>
               </li>
             ))}
+          <div className={styles.navIconsContainer}>
+            <NavIcons />
+          </div>
           </ul>
-          {isOpen && (
-            <div
-              className={`${styles.overlay} ${
-                isOverlayVisible ? styles.visible : ""
-              }`}
-              onClick={() => {
-                setIsOpen(false);
-                setIsOverlayVisible(false);
-              }}
-            ></div>
-          )}
           <span
             className={
               isOpen === false
