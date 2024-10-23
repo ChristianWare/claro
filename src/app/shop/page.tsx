@@ -1,17 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import PageIntro from "@/components/PageIntro/PageIntro";
 import Shop from "../../../public/images/shop.jpg";
-import { wixClientServer } from "@/lib/wixClientServer";
+// import { wixClientServer } from "@/lib/wixClientServer";
 import LayoutWrapper from "@/components/LayoutWrapper";
 import { Suspense } from "react";
 import ProductList from "@/components/ProductList/ProductList";
+import FinalCTA from "@/components/FinalCTA/FinalCTA";
 
 const ShopPage = async ({ searchParams }: { searchParams: any }) => {
-  const wixClient = await wixClientServer();
+  // const wixClient = await wixClientServer();
 
-  const cat = await wixClient.collections.getCollectionBySlug(
-    searchParams.cat || "all-products"
-  );
+  // const cat = await wixClient.collections.getCollectionBySlug(
+  //   searchParams.cat || "all-products"
+  // );
 
   return (
     <main>
@@ -21,18 +22,26 @@ const ShopPage = async ({ searchParams }: { searchParams: any }) => {
         text='Shop CLARO'
       />
       <LayoutWrapper>
-        <h2 className='mt-12 text-xl font-semibold'>
-          {cat?.collection?.name} For You!
-        </h2>
         <Suspense fallback='loading'>
+          <h2>Earbuds</h2>
           <ProductList
-            categoryId={
-              cat.collection?._id || "00000000-000000-000000-000000000001"
-            }
+            categoryId={process.env.EARBUDS_CATEGORY_ID!}
             searchParams={searchParams}
           />
+          <br />
+          <br />
+          <br />
+          <h2>Headphones</h2>
+          <ProductList
+            categoryId={process.env.HEADPHONES_CATEGORY_ID!}
+            searchParams={searchParams}
+          />
+          <br />
+          <br />
+          <br />
         </Suspense>
       </LayoutWrapper>
+      <FinalCTA />
     </main>
   );
 };
