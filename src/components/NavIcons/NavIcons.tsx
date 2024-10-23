@@ -1,10 +1,10 @@
 "use client";
 
 import styles from "./NavIcons.module.css";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useWixClient } from "@/hooks/useWixClient";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 import { useCartStore } from "@/hooks/useCartStore";
 import ProfileIcon from "../../../public/icons/profile.svg";
 import BasketIcon from "../../../public/icons/basket.svg";
@@ -13,19 +13,8 @@ import Modal from "../Modal/Modal";
 
 const NavIcons = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const router = useRouter();
 
   const wixClient = useWixClient();
-  const isLoggedIn = wixClient.auth.loggedIn();
-
-  // TEMPORARY
-  // const isLoggedIn = false;
-
-  const handleProfile = () => {
-    router.push("/login");
-  };
 
   const handleCloseModal = () => {
     setIsCartOpen(false);
@@ -46,16 +35,19 @@ const NavIcons = () => {
           className={styles.icon}
           onClick={() => setIsCartOpen((prev) => !prev)}
         />
+        <div className={styles.counter}>
+          <p>{counter}</p>
+        </div>
       </div>
       {isCartOpen && (
         <Modal isOpen={isCartOpen} onClose={handleCloseModal}>
-          <h3>hey</h3>
-          <p>
+          <h3>Cart Info Here</h3>
+          <h6 className={styles.copy}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
             cum a ad similique quae sapiente, doloribus commodi, deserunt quasi
             pariatur at facere consequuntur ipsam culpa enim, earum dignissimos
             amet? Reprehenderit?
-          </p>
+          </h6>
         </Modal>
       )}
     </div>

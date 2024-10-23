@@ -31,12 +31,12 @@
   flex-direction: column;
 }
 
-.link {
+/* .link {
   margin: 10px 0;
   cursor: pointer;
   color: blue;
   text-decoration: underline;
-}
+} */
 
 
 @media screen and (max-width: 768px) {
