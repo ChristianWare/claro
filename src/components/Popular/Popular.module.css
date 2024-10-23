@@ -10,6 +10,45 @@
   font-size: 1.8rem;
 }
 
-.bottom {
+.parent {
+  background-color: var(--gray);
   margin-top: 5rem;
+}
+
+.bottomii {
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 5rem 10rem;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.icon {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 968px) {
+  .bottomii {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .bottomii {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 7rem;
+  }
 }

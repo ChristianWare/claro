@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@wix/ecom": "^1.0.778",
     "@wix/members": "^1.0.108",
     "@wix/sdk": "^1.14.1",
