@@ -47,34 +47,33 @@ const ProductList = async ({
           key={product._id}
           className={styles.card}
         >
-          <div className={styles.imgContainer}>
-            <WixImage
-              mediaIdentifier={product.media?.mainMedia?.image?.url}
-              alt={product.media?.mainMedia?.image?.altText || ""}
-              width={500}
-              height={500}
-              className={styles.img}
-            />
+          <WixImage
+            mediaIdentifier={product.media?.mainMedia?.image?.url}
+            alt={product.media?.mainMedia?.image?.altText || ""}
+            width={500}
+            height={500}
+            className={styles.img}
+          />
+
+          <div className={styles.infoSection}>
+            <p className={styles.productName}>{product.name}</p>
+            {product.additionalInfoSections && (
+              <div
+                className={styles.addInfoDetails}
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(
+                    product.additionalInfoSections
+                      .find((section: any) => section.title === "shortDesc")
+                      ?.description?.slice(0, 22) || ""
+                  ),
+                }}
+              ></div>
+            )}
+            <p className={styles.price}>${product.priceData?.price}</p>
           </div>
-          <div>
-            <p>{product.name}</p>
-            <p>${product.priceData?.price}</p>
-          </div>
-          {product.additionalInfoSections && (
-            <div
-              className='text-sm text-gray-500'
-              dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(
-                  product.additionalInfoSections.find(
-                    (section: any) => section.title === "shortDesc"
-                  )?.description || ""
-                ),
-              }}
-            ></div>
-          )}
-          <button className='rounded-2xl ring-1 ring-lama text-lama w-max py-2 px-4 text-xs hover:bg-lama hover:text-white'>
+          {/* <button className='rounded-2xl ring-1 ring-lama text-lama w-max py-2 px-4 text-xs hover:bg-lama hover:text-white'>
             Add to Cart
-          </button>
+          </button> */}
         </Link>
       ))}
     </div>
