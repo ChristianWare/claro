@@ -39,29 +39,21 @@ function Nav() {
 
   const navItems = [
     {
-      text: "Home",
-      href: "/",
-    },
-    {
-      text: "Packages",
-      href: "/packages",
-    },
-    {
-      text: "Courses",
-      href: "/courses",
+      text: "shop",
+      href: "/shop",
     },
     {
       text: "About Us",
       href: "/about",
     },
     {
-      text: "Gallery",
-      href: "/gallery",
+      text: "Locations",
+      href: "/locations",
     },
 
     {
-      text: "Contact",
-      href: "contact",
+      text: "Support",
+      href: "/support",
     },
   ];
 

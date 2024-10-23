@@ -73,7 +73,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-@media screen and (max-width: 1068px) {
+@media screen and (max-width: 900px) {
   .logo {
     font-size: 2rem;
   }
