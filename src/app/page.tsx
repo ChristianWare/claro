@@ -1,11 +1,13 @@
 import Hero from "@/components/Hero/Hero";
 import Popular from "@/components/Popular/Popular";
 
-export default function Home() {
+const HomePage = async () => {
   return (
     <main>
       <Hero />
       <Popular />
     </main>
   );
-}
+};
+
+export default HomePage;
