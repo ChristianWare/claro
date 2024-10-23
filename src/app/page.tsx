@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero/Hero";
 import Popular from "@/components/Popular/Popular";
 import Usp from "@/components/Usp/Usp";
+import Uspii from "@/components/Uspii/Uspii";
 
 const HomePage = async () => {
   return (
@@ -8,8 +9,7 @@ const HomePage = async () => {
       <Hero />
       <Popular />
       <Usp />
-      <Usp />
-      <Usp />
+      <Uspii />
     </main>
   );
 };

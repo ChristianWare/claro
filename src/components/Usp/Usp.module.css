@@ -95,3 +95,30 @@
     height: 800px;
   }
 }
+
+@media screen and (max-width: 668px) {
+  .left {
+    padding: 2rem;
+    padding-bottom: 10rem;
+  }
+
+  .heading {
+    font-size: 4.5rem;
+    text-align: left;
+  }
+
+  .copy {
+    font-size: 1.9rem;
+    text-align: left;
+  }
+
+  .ottom {
+    width: 100%;
+  }
+
+  .btnContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+  }
+}
