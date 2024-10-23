@@ -38,3 +38,8 @@
   border: 2px solid var(--white);
   color: var(--white);
 }
+
+.blackOutline {
+  border: 2px solid var(--black);
+  color: var(--black);
+}
