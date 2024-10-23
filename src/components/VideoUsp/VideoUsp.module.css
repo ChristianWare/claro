@@ -1,5 +1,4 @@
 .container {
-  margin-top: -2rem;
   margin-bottom: 8rem;
   position: relative;
 }
@@ -56,12 +55,23 @@
   margin-bottom: 0.2rem;
 }
 
+.playPauseButton {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--white);
+  border: none;
+  border-radius: 50%;
+  padding: 1.5rem;
+  z-index: 4;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-
-
-@media screen and (max-width: 668px) {
-
-
+.playPauseButton svg {
+  fill: var(--white);
 }
 
 @media screen and (max-width: 568px) {
