@@ -97,6 +97,7 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
         <GalleryGrid items={product.media?.items} />
         <br />
         <br />
+      </LayoutWrapper>
         <div className={styles.parent}>
           <LayoutWrapper>
             <div className={styles.bottomii}>
@@ -109,7 +110,6 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
             </div>
           </LayoutWrapper>
         </div>
-      </LayoutWrapper>
     </main>
   );
 };
