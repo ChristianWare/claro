@@ -6,6 +6,7 @@ import LayoutWrapper from "@/components/LayoutWrapper";
 import DOMPurify from "isomorphic-dompurify";
 import ProductImages from "@/components/ProductImages/ProductImages";
 import SlugIntro from "@/components/SlugIntro/SlugIntro";
+import GalleryGrid from "@/components/GalleryGrid/GalleryGrid";
 
 // import { Suspense } from "react";
 
@@ -31,6 +32,7 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
       )?.description || ""
     : "";
 
+
   return (
     <main className={styles.container}>
       <SlugIntro />
@@ -45,7 +47,7 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
           <div className={styles.right}>
             <h1 className={styles.heading}>{product.name}</h1>
             <span className={styles.price}>
-              {/* USD ${product.priceData?.price} */}
+              USD ${product.priceData?.price}
             </span>
 
             <div
@@ -54,14 +56,13 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
                 __html: DOMPurify.sanitize(shortDesc),
               }}
             ></div>
-            <div
-              className={styles.description}
-              dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(product.description ?? ""),
-              }}
-            ></div>
           </div>
         </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <GalleryGrid items={product.media?.items} />
       </LayoutWrapper>
     </main>
   );

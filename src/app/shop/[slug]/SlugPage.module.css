@@ -48,3 +48,32 @@
   letter-spacing: -0.3px;
   width: 70%;
 }
+
+@media screen and (max-width: 968px) {
+  .content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .right {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .heading,
+  .price,
+  .description {
+    text-align: center;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .heading,
+  .price,
+  .description {
+    text-align: center;
+    width: 100%;
+  }
+}
