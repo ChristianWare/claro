@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./GalleryGrid.module.css";
 import LayoutWrapper from "../LayoutWrapper";
@@ -34,8 +34,40 @@ const GalleryGrid = ({ items }: iAppProps) => {
     setSlideNumber(slideNumber + 1 === items.length ? 0 : slideNumber + 1);
   };
 
+  // Handle keyboard events for modal navigation and closing
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!openModal) return;
+
+      switch (e.key) {
+        case "ArrowLeft":
+          prevSlide();
+          break;
+        case "ArrowRight":
+          nextSlide();
+          break;
+        case "Escape":
+          handleCloseModal();
+          break;
+        default:
+          break;
+      }
+    };
+
+    // Add event listener for keydown when the modal is open
+    if (openModal) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+
+    // Clean up event listener when the modal is closed
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [openModal, slideNumber]);
+
   return (
     <div className={styles.container}>
+      <h6 className={styles.heading2}>Gallery</h6>
       <div className={styles.gallery}>
         {items.map((item: any, index: number) => (
           <div key={item.id || index} className={styles.imgContainer4}>
@@ -53,12 +85,14 @@ const GalleryGrid = ({ items }: iAppProps) => {
       {openModal && (
         <LayoutWrapper>
           <div className={styles.modalContainer}>
-            <Cancel
-              className={styles.close}
-              onClick={handleCloseModal}
-              width={40}
-              height={40}
-            />
+            <div onClick={handleCloseModal}>
+              <Cancel
+                className={styles.close}
+                onClick={handleCloseModal}
+                width={40}
+                height={40}
+              />
+            </div>
             <div className={styles.fullScreenImage}>
               <Back
                 className={styles.prev}

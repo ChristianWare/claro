@@ -32,7 +32,6 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
       )?.description || ""
     : "";
 
-
   return (
     <main className={styles.container}>
       <SlugIntro />

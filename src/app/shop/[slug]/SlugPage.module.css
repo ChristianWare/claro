@@ -50,12 +50,17 @@
 }
 
 @media screen and (max-width: 968px) {
-  .content {
-    grid-template-columns: repeat(1, 1fr);
-  }
 }
 
 @media screen and (max-width: 768px) {
+  .content {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2rem;
+  }
+
+  .right {
+    order: -1;
+  }
   .right {
     align-items: center;
     justify-content: center;
