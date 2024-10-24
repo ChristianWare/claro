@@ -1,17 +1,19 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import styles from "./NavIcons.module.css";
-// import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useWixClient } from "@/hooks/useWixClient";
-// import Cookies from "js-cookie";
 import { useCartStore } from "@/hooks/useCartStore";
 import ProfileIcon from "../../../public/icons/profile.svg";
 import BasketIcon from "../../../public/icons/basket.svg";
 import Modal from "../Modal/Modal";
-// import Link from "next/link";
 
-const NavIcons = () => {
+interface NavIconsProps {
+  color: string;
+}
+
+const NavIcons = ({ color }: NavIconsProps) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   const wixClient = useWixClient();
@@ -20,7 +22,6 @@ const NavIcons = () => {
     setIsCartOpen(false);
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { cart, counter, getCart } = useCartStore();
 
   useEffect(() => {
@@ -28,11 +29,11 @@ const NavIcons = () => {
   }, [wixClient, getCart]);
 
   return (
-    <div className={styles.container}>
-      <ProfileIcon className={styles.icon} />
+    <div className={`${styles.container} ${styles[color]}`}>
+      <ProfileIcon className={`${styles.icon} ${styles[color]}`} />
       <div className={styles.basketContainer}>
         <BasketIcon
-          className={styles.icon}
+          className={`${styles.icon} ${styles[color]}`}
           onClick={() => setIsCartOpen((prev) => !prev)}
         />
         <div className={styles.counter}>
@@ -53,4 +54,5 @@ const NavIcons = () => {
     </div>
   );
 };
+
 export default NavIcons;

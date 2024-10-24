@@ -1,0 +1,18 @@
+.readMoreContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.readMoreText {
+  margin-left: 0.5rem;
+  font-size: 1.6rem;
+  font-family: var(--pretendard);
+  color: #333;
+}
+
+.plusIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}

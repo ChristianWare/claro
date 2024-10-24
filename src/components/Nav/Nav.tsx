@@ -6,7 +6,11 @@ import Link from "next/link";
 import NavIcons from "../NavIcons/NavIcons";
 // import Logo from "../../../public/icons/logo.png";
 
-function Nav() {
+interface NavProps {
+  color?: string;
+}
+
+function Nav({ color = "" }: NavProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const openMenu = () => {
@@ -60,7 +64,7 @@ function Nav() {
     <>
       <header className={styles.header}>
         <nav className={styles.navbar}>
-          <Link href='/' className={styles.logo}>
+          <Link href='/' className={`${styles.logo} ${styles[color]}`}>
             CLARO
           </Link>
           <ul
@@ -73,17 +77,20 @@ function Nav() {
             {navItems.map((navItem, index) => (
               <li
                 key={index}
-                className={styles.navItem}
+                className={`${styles.navItem} ${styles[color]}`}
                 onClick={() => setIsOpen(false)}
               >
-                <Link href={navItem.href} className={styles.navItem}>
+                <Link
+                  href={navItem.href}
+                  className={`${styles.navItem} ${styles[color]}`}
+                >
                   {navItem.text}
                 </Link>
               </li>
             ))}
-          <div className={styles.navIconsContainer}>
-            <NavIcons />
-          </div>
+            <div className={styles.navIconsContainer}>
+              <NavIcons color={color} />
+            </div>
           </ul>
           <span
             className={

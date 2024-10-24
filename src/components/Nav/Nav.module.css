@@ -78,6 +78,10 @@
   transition: 0.4s all ease-in;
 }
 
+.black {
+  color: var(--black);
+}
+
 @media screen and (max-width: 900px) {
   .logo {
     font-size: 2rem;
