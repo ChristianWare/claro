@@ -1,18 +1,18 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Image, { StaticImageData } from "next/image";
 import Nav from "../Nav/Nav";
 import styles from "./PageIntro.module.css";
 import LayoutWrapper from "../LayoutWrapper";
 import Eyebrow from "../Eyebrow/Eyebrow";
-import defaultImage from "../../../public/images/control.jpg"; // Import a default image
 
 interface Props {
-  eyebrow: string;
-  text: string;
+  eyebrow: any;
+  text: string | null | undefined;
   copy?: string;
-  src?: StaticImageData;
+  src?: StaticImageData | string;
 }
 
-const PageIntro = ({ eyebrow, text, copy, src = defaultImage }: Props) => {
+const PageIntro = ({ eyebrow, text, copy, src = "" }: Props) => {
   return (
     <div className={styles.parent}>
       <section className={styles.container}>

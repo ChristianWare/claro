@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import Nav from "@/components/Nav/Nav";
 import styles from "./SlugPage.module.css";
 import { wixClientServer } from "@/lib/wixClientServer";
 import { notFound } from "next/navigation";
 import LayoutWrapper from "@/components/LayoutWrapper";
 import DOMPurify from "isomorphic-dompurify";
 import ProductImages from "@/components/ProductImages/ProductImages";
+import SlugIntro from "@/components/SlugIntro/SlugIntro";
 
 // import { Suspense } from "react";
 
@@ -33,9 +33,10 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <main className={styles.container}>
-      <div className={styles.navContainer}>
-        <Nav color='black' />
-      </div>
+      <SlugIntro />
+      <br />
+      <br />
+      <br />
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.left}>
@@ -44,7 +45,7 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
           <div className={styles.right}>
             <h1 className={styles.heading}>{product.name}</h1>
             <span className={styles.price}>
-              USD ${product.priceData?.price}
+              {/* USD ${product.priceData?.price} */}
             </span>
 
             <div
