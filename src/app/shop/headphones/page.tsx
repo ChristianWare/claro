@@ -1,27 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import PageIntro from "@/components/PageIntro/PageIntro";
-import Shop from "../../../public/images/shop.jpg";
-import { wixClientServer } from "@/lib/wixClientServer";
+import Img from "../../../../public/images/headphonesii.jpg";
 import LayoutWrapper from "@/components/LayoutWrapper";
 import { Suspense } from "react";
 import ProductList from "@/components/ProductList/ProductList";
 import FinalCTA from "@/components/FinalCTA/FinalCTA";
-import styles from "./ShopPage.module.css";
+import styles from "../ShopPage.module.css";
 import CategoryNav from "@/components/CategoryNav/CategoryNav";
 
-const ShopPage = async ({ searchParams }: { searchParams: any }) => {
-  const wixClient = await wixClientServer();
-
-  const cat = await wixClient.collections.getCollectionBySlug(
-    searchParams.cat || "all-products"
-  );
-
+const HeadphonesPage = async ({ searchParams }: { searchParams: any }) => {
   return (
     <main>
       <PageIntro
-        src={Shop}
+        src={Img}
         eyebrow="Experience the CLARO difference you've been hearing about"
-        text='Shop CLARO'
+        text='Shop headphones'
       />
       <LayoutWrapper>
         <div className={styles.content}>
@@ -31,9 +24,7 @@ const ShopPage = async ({ searchParams }: { searchParams: any }) => {
           <div className={styles.right}>
             <Suspense fallback='loading'>
               <ProductList
-                categoryId={
-                  cat.collection?._id || "00000000-000000-000000-000000000001"
-                }
+                categoryId={process.env.HEADPHONES_CATEGORY_ID!}
                 searchParams={searchParams}
               />
             </Suspense>
@@ -44,4 +35,5 @@ const ShopPage = async ({ searchParams }: { searchParams: any }) => {
     </main>
   );
 };
-export default ShopPage;
+
+export default HeadphonesPage;

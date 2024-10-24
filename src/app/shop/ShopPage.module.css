@@ -1,0 +1,17 @@
+.content {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-gap: 5rem;
+}
+
+@media screen and (max-width: 968px) {
+  .content {
+    grid-template-columns: 2fr 5fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
